@@ -7,7 +7,7 @@ services:
     build:
       dockerfile: Dockerfile
       context: .
-    command: fastapi-issue-548 runserver --host 0.0.0.0
+    command: bash -c "fastapi-issue-548 --version && fastapi-issue-548 runserver --host 0.0.0.0"
     volumes:
       - ./app:/home/appuser/app/app:ro
     ports:
@@ -20,7 +20,7 @@ services:
     build:
       dockerfile: Dockerfile
       context: .
-    command: fastapi-issue-548 runserver --host 0.0.0.0 --reload
+    command: bash -c "fastapi-issue-548 --version && fastapi-issue-548 runserver --host 0.0.0.0 --reload"
     volumes:
       - ./app:/home/appuser/app/app:ro
     ports:
