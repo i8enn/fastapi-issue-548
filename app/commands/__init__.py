@@ -2,6 +2,7 @@
 import click
 import platform
 
+from uvicorn import __version__ as uvicorn_version
 from fastapi import __version__ as fastapi_version
 
 from app.main import create_app
@@ -18,12 +19,14 @@ def get_version():
               'Platform -- %(os)s\n' \
               'Python -- %(python)s\n' \
               'FastAPI -- %(fastapi)s\n' \
+              'Uvicorn -- %(uvicorn)s\n' \
               'App version -- %(app_version)s\n'\
               f'{"="*50}' \
               % {
                   'os': platform.platform(),
                   'python': platform.python_version(),
                   'fastapi': fastapi_version,
+                  'uvicorn': uvicorn_version,
                   'app_version': app_version
               }
     return message
