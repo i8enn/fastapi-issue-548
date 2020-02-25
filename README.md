@@ -19,7 +19,7 @@ http://localhost:8001 - Application **with** uvicorn reload (Swagger normal work
 
 ## Bug details
 
-If application working without uvicorn `--reload` and using `Body(embed=True)`, OpenAPI raise `KeyError` exception ([view code](https://github.com/i8enn/fastapi-issue-548/blob/master/app/api/users/auth.py#L18)).
+If application working **without** uvicorn `--reload` and using `Body(embed=True)`, OpenAPI raise `KeyError` exception ([view code](https://github.com/i8enn/fastapi-issue-548/blob/master/app/api/users/auth.py#L18)).
 
 <details>
 <summary>Traceback</summary>

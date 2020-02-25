@@ -13,7 +13,7 @@ auth_routes = APIRouter()
 def password_reset(
         *,
         reset_token: str,
-        # Not working with password `embed=True` and uvicorn --reload
+        # Not working with password `embed=True` and uvicorn without --reload
         password: str = Body(
             ..., title='New password', embed=True, min_length=3, max_length=20
         )
