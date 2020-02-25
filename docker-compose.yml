@@ -7,27 +7,13 @@ services:
     build:
       dockerfile: Dockerfile
       context: .
-    command: bash -c "fastapi-issue-548 --version && fastapi-issue-548 runserver --host 0.0.0.0"
+    command: bash -c "fastapi-issue-548 --version && python -m app"
     volumes:
       - ./app:/home/appuser/app/app:ro
     ports:
       - 8000:8000
     networks:
       - app
-  
-  app-with-reload:
-    image: fastapi-issue-548
-    build:
-      dockerfile: Dockerfile
-      context: .
-    command: bash -c "fastapi-issue-548 --version && fastapi-issue-548 runserver --host 0.0.0.0 --reload"
-    volumes:
-      - ./app:/home/appuser/app/app:ro
-    ports:
-      - 8001:8000
-    networks:
-      - app
-
 
 networks:
   app:
