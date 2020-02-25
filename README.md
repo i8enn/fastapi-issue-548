@@ -13,9 +13,9 @@ Build docker images and up app containers
 
 See browser:
 
-http://localhost:8000 - Application **without** uvicorn reload (Swagger not working)
+http://localhost:8000/docs - Application **without** uvicorn reload (Swagger not working)
 
-http://localhost:8001 - Application **with** uvicorn reload (Swagger normal working)
+http://localhost:8001/docs - Application **with** uvicorn reload (Swagger normal working)
 
 ## Bug details
 
