@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+
+  app-without-reload:
+    image: fastapi-issue-548
+    build:
+      dockerfile: Dockerfile
+      context: .
+    command: fastapi-issue-548 runserver --host 0.0.0.0
+    volumes:
+      - ./app:/home/appuser/app/app:ro
+    ports:
+      - 8000:8000
+    networks:
+      - app
+  
+  app-with-reload:
+    image: fastapi-issue-548
+    build:
+      dockerfile: Dockerfile
+      context: .
+    command: fastapi-issue-548 runserver --host 0.0.0.0 --reload
+    volumes:
+      - ./app:/home/appuser/app/app:ro
+    ports:
+      - 8001:8000
+    networks:
+      - app
+
+
+networks:
+  app:
